@@ -35,13 +35,13 @@ const Navbar = () => {
               to={'/courses'}
               className='mr-5 cursor-pointer hover:text-[#FFC000] hover:underline'
             >
-              our-courses
+              courses
             </Link>
             <Link
-              to={'/'}
+              to={'/instructors'}
               className='mr-5 cursor-pointer hover:text-[#FFC000] hover:underline'
             >
-              gallery
+              instructors
             </Link>
             <Link
               to={'/blog'}
@@ -50,7 +50,7 @@ const Navbar = () => {
               blog
             </Link>
             <Link
-              to={'/'}
+              to={'/contact'}
               className='mr-5 cursor-pointer hover:text-[#FFC000] hover:underline'
             >
               contact

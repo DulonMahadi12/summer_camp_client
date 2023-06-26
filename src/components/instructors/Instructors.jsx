@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-const Courses = () => {
+const Instructors = () => {
   return (
     <div className='bg-[#FFFBEE]'>
       <section className='text-gray-600 body-font'>
@@ -39,7 +39,7 @@ const Courses = () => {
                 ethical XOXO lumbersexual.
               </p>
               <small className='font-normal text-md'>
-                <Link to={'/course_details'}>
+                <Link to={'/instructors_details'}>
                   <button className='rounded-lg w-32 mt-2 h-6 duration-200 font-bold text-xs py-1 px-5 text-[#2b2b2b] capitalize bg-[#FFC000] hover:bg-[#12B76A] hover:text-white'>
                     see details
                   </button>
@@ -53,4 +53,4 @@ const Courses = () => {
   );
 };
 
-export default Courses;
+export default Instructors;

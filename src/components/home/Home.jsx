@@ -4,6 +4,8 @@ import ConceptualLearning from '../../assets/AboutSectionLogo/ConceptualLearning
 import PersonalDevelopment from '../../assets/AboutSectionLogo/PersonalDevelopment.svg';
 import PublicSpeking from '../../assets/AboutSectionLogo/PublicSpeking.svg';
 import { Link } from 'react-router-dom';
+import SingleCourse from '../courses/singleCourse/SingleCourse';
+import SingleInstructor from '../instructors/singleInstructors/SingleInstructor';
 
 const Home = () => {
   return (
@@ -355,7 +357,7 @@ const Home = () => {
       <section className='py-20 w-full'>
         <div className='w-8/12 mx-auto pb-10 flex flex-col items-center text-center'>
           <h1 className='uppercase text-[#101828] title-font pb-5 sm:text-3xl text-3xl font-medium font-logoFont'>
-            our academical courses
+            academic courses
           </h1>
           <p className='leading-relaxed text-lg'>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse,
@@ -372,213 +374,43 @@ const Home = () => {
         </div>
 
         {/* all cards  */}
-        {/* TODO: when data available replace this dynamically */}
-        <div className='grid sm:grid-cols-1 px-20 lg:grid-cols-3 items-center justify-center gap-5'>
-          {/* card-1  */}
-          <div className='p-4 md:w-3/3'>
-            <div className='h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden'>
-              <img
-                className='lg:h-48 md:h-36 w-full object-cover object-center'
-                src='https://dummyimage.com/720x400'
-                alt='blog'
-              />
-              <div className='p-6'>
-                <h2 className='tracking-widest text-xs title-font font-medium text-gray-400 mb-1'>
-                  CATEGORY
-                </h2>
-                <h1 className='title-font text-lg font-medium text-gray-900 mb-3'>
-                  The Catalyzer
-                </h1>
-                <p className='leading-relaxed mb-3'>
-                  Photo booth fam kinfolk cold-pressed sriracha leggings
-                  jianbing microdosing tousled waistcoat.
-                </p>
-                <div className='flex items-center flex-wrap '>
-                  <a className='text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0'>
-                    Learn More
-                    <svg
-                      className='w-4 h-4 ml-2'
-                      viewBox='0 0 24 24'
-                      stroke='currentColor'
-                      strokeWidth='2'
-                      fill='none'
-                      strokeLinecap='round'
-                      strokeLinejoin='round'
-                    >
-                      <path d='M5 12h14'></path>
-                      <path d='M12 5l7 7-7 7'></path>
-                    </svg>
-                  </a>
-                  <span className='text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200'>
-                    <svg
-                      className='w-4 h-4 mr-1'
-                      stroke='currentColor'
-                      strokeWidth='2'
-                      fill='none'
-                      strokeLinecap='round'
-                      strokeLinejoin='round'
-                      viewBox='0 0 24 24'
-                    >
-                      <path d='M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z'></path>
-                      <circle cx='12' cy='12' r='3'></circle>
-                    </svg>
-                    1.2K
-                  </span>
-                  <span className='text-gray-400 inline-flex items-center leading-none text-sm'>
-                    <svg
-                      className='w-4 h-4 mr-1'
-                      stroke='currentColor'
-                      strokeWidth='2'
-                      fill='none'
-                      strokeLinecap='round'
-                      strokeLinejoin='round'
-                      viewBox='0 0 24 24'
-                    >
-                      <path d='M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z'></path>
-                    </svg>
-                    6
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
+        {/* TODO: when data available replace this dynamically only show 3 cards beacause its home page */}
+        <div className='grid sm:grid-cols-1 bg-orange-50 px-20 py-10 lg:grid-cols-3 items-center justify-center gap-5'>
+          {/* card-1 show course minimum 3 cards */}
+          {[1, 2, 3].map((everyCard, index) => (
+            <SingleCourse key={index} data={everyCard}></SingleCourse>
+          ))}
+        </div>
+      </section>
 
-          {/* card-2  */}
-          <div className='p-4 md:w-3/3'>
-            <div className='h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden'>
-              <img
-                className='lg:h-48 md:h-36 w-full object-cover object-center'
-                src='https://dummyimage.com/720x400'
-                alt='blog'
-              />
-              <div className='p-6'>
-                <h2 className='tracking-widest text-xs title-font font-medium text-gray-400 mb-1'>
-                  CATEGORY
-                </h2>
-                <h1 className='title-font text-lg font-medium text-gray-900 mb-3'>
-                  The Catalyzer
-                </h1>
-                <p className='leading-relaxed mb-3'>
-                  Photo booth fam kinfolk cold-pressed sriracha leggings
-                  jianbing microdosing tousled waistcoat.
-                </p>
-                <div className='flex items-center flex-wrap '>
-                  <a className='text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0'>
-                    Learn More
-                    <svg
-                      className='w-4 h-4 ml-2'
-                      viewBox='0 0 24 24'
-                      stroke='currentColor'
-                      strokeWidth='2'
-                      fill='none'
-                      strokeLinecap='round'
-                      strokeLinejoin='round'
-                    >
-                      <path d='M5 12h14'></path>
-                      <path d='M12 5l7 7-7 7'></path>
-                    </svg>
-                  </a>
-                  <span className='text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200'>
-                    <svg
-                      className='w-4 h-4 mr-1'
-                      stroke='currentColor'
-                      strokeWidth='2'
-                      fill='none'
-                      strokeLinecap='round'
-                      strokeLinejoin='round'
-                      viewBox='0 0 24 24'
-                    >
-                      <path d='M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z'></path>
-                      <circle cx='12' cy='12' r='3'></circle>
-                    </svg>
-                    1.2K
-                  </span>
-                  <span className='text-gray-400 inline-flex items-center leading-none text-sm'>
-                    <svg
-                      className='w-4 h-4 mr-1'
-                      stroke='currentColor'
-                      strokeWidth='2'
-                      fill='none'
-                      strokeLinecap='round'
-                      strokeLinejoin='round'
-                      viewBox='0 0 24 24'
-                    >
-                      <path d='M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z'></path>
-                    </svg>
-                    6
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-          {/* card-3  */}
-          <div className='p-4 md:w-3/3'>
-            <div className='h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden'>
-              <img
-                className='lg:h-48 md:h-36 w-full object-cover object-center'
-                src='https://dummyimage.com/720x400'
-                alt='blog'
-              />
-              <div className='p-6'>
-                <h2 className='tracking-widest text-xs title-font font-medium text-gray-400 mb-1'>
-                  CATEGORY
-                </h2>
-                <h1 className='title-font text-lg font-medium text-gray-900 mb-3'>
-                  The Catalyzer
-                </h1>
-                <p className='leading-relaxed mb-3'>
-                  Photo booth fam kinfolk cold-pressed sriracha leggings
-                  jianbing microdosing tousled waistcoat.
-                </p>
-                <div className='flex items-center flex-wrap '>
-                  <a className='text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0'>
-                    Learn More
-                    <svg
-                      className='w-4 h-4 ml-2'
-                      viewBox='0 0 24 24'
-                      stroke='currentColor'
-                      strokeWidth='2'
-                      fill='none'
-                      strokeLinecap='round'
-                      strokeLinejoin='round'
-                    >
-                      <path d='M5 12h14'></path>
-                      <path d='M12 5l7 7-7 7'></path>
-                    </svg>
-                  </a>
-                  <span className='text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200'>
-                    <svg
-                      className='w-4 h-4 mr-1'
-                      stroke='currentColor'
-                      strokeWidth='2'
-                      fill='none'
-                      strokeLinecap='round'
-                      strokeLinejoin='round'
-                      viewBox='0 0 24 24'
-                    >
-                      <path d='M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z'></path>
-                      <circle cx='12' cy='12' r='3'></circle>
-                    </svg>
-                    1.2K
-                  </span>
-                  <span className='text-gray-400 inline-flex items-center leading-none text-sm'>
-                    <svg
-                      className='w-4 h-4 mr-1'
-                      stroke='currentColor'
-                      strokeWidth='2'
-                      fill='none'
-                      strokeLinecap='round'
-                      strokeLinejoin='round'
-                      viewBox='0 0 24 24'
-                    >
-                      <path d='M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z'></path>
-                    </svg>
-                    6
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
+      {/* academic instructor course section */}
+      {/* TODO: when data available replace this dynamically */}
+      <section className='pb-20 w-full'>
+        <div className='w-8/12 mx-auto pb-10 flex flex-col items-center text-center'>
+          <h1 className='uppercase text-[#101828] title-font pb-5 sm:text-3xl text-3xl font-medium font-logoFont'>
+            academic instructors
+          </h1>
+          <p className='leading-relaxed text-lg'>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse,
+            corrupti porro ducimus magni minima reiciendis officia ea
+            voluptatibus consectetur laudantium.
+            <small className='font-normal text-md'>
+              <Link to={'/instructors'}>
+                <button className='ms-2 rounded-lg w-40 h-6 duration-200 font-bold text-xs py-1 px-5 text-[#2b2b2b] capitalize bg-[#FFC000] hover:bg-[#12B76A] hover:text-white'>
+                  instructor courses
+                </button>
+              </Link>
+            </small>
+          </p>
+        </div>
+
+        {/* all cards  */}
+        {/* TODO: when data available replace this dynamically only show 3 cards beacause its home page */}
+        <div className='grid sm:grid-cols-1 bg-orange-50 px-20 py-10 lg:grid-cols-3 items-center justify-center gap-5'>
+          {/* card-1 show instructor course minimum 3 cards */}
+          {[1, 2, 3].map((everyCard, index) => (
+            <SingleInstructor key={index} data={everyCard}></SingleInstructor>
+          ))}
         </div>
       </section>
     </div>
