@@ -13,20 +13,14 @@ const FooterJSX = () => {
   return (
     <>
       <Footer>
-        <div className='w-full bg-[#FFFBEE] p-10'>
+        <div className='w-full bg-[#FFF2CC] p-10'>
           <div className='grid w-full justify-between sm:flex sm:justify-between md:flex md:grid-cols-1 '>
             <div>
               <Link
-                to={'/'}
+                to={'/home'}
                 className='flex font-logoFont title-font font-medium items-center text-gray-900 mb-4 md:mb-0'
               >
                 <span className='cursor-pointer'>
-                  {/* <span className='text-[#FFC000] text-5xl font-logo'>
-                    SUMMER
-                  </span>
-                  <small className='text-[#101828] text-xl ml-1 font-bold'>
-                    level
-                  </small> */}
                   <small className=''>
                     <img className='w-[20rem]' src={Vite} alt='logoSVG' />
                   </small>

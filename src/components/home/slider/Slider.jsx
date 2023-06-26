@@ -8,7 +8,7 @@ const Slider = () => {
         data-carousel='static'
       >
         {/* <!-- Carousel wrapper --> */}
-        <div className='relative h-56 overflow-hidden rounded-lg md:h-96'>
+        <div className='relative h-56 overflow-hidden md:h-96'>
           {/* <!-- Item 1 --> */}
           <div
             className='hidden h-96 duration-700 ease-in-out bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500'
@@ -19,6 +19,16 @@ const Slider = () => {
               className='absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 opacity-40 '
               alt='...'
             />
+
+            <div className='absolute top-[10%] left-[15%] lg:top-[40%] lg:left-[10%]'>
+              <h2 className='text-3xl lg:text-4xl text-white font-bold font-logoFont w-12/12 lg:w-8/12'>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Blanditiis.
+              </h2>
+              <button className=' mt-2 uppercase mr-2 px-3 py-1 font-semibold font-logoFont hover:bg-[#FFF2CC]  hover:text-[#101828]  bg-[#FFC000] text-[#101828] rounded-lg hover:ring-1  ml-1  duration-300'>
+                sign out
+              </button>
+            </div>
           </div>
 
           {/* <!-- Item 1 --> */}
@@ -31,6 +41,15 @@ const Slider = () => {
               className='absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 opacity-40 '
               alt='...'
             />
+            <div className='absolute top-[10%] left-[15%] lg:top-[40%] lg:left-[10%]'>
+              <h2 className='text-3xl lg:text-4xl text-white font-bold font-logoFont w-12/12 lg:w-8/12'>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Blanditiis.
+              </h2>
+              <button className=' mt-2 uppercase mr-2 px-3 py-1 font-semibold font-logoFont hover:bg-[#FFF2CC]  hover:text-[#2b2b2b]  bg-[#FFC000] text-[#2b2b2b] rounded-lg hover:ring-1  ml-1  duration-300'>
+                sign out
+              </button>
+            </div>
           </div>
 
           {/* <!-- Item 3 --> */}
@@ -43,6 +62,15 @@ const Slider = () => {
               className='absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 opacity-40'
               alt='...'
             />
+          </div>
+          <div className='absolute top-[10%] left-[15%] lg:top-[40%] lg:left-[10%]'>
+            <h2 className='text-3xl lg:text-4xl text-white font-bold font-logoFont w-12/12 lg:w-8/12'>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Blanditiis.
+            </h2>
+            <button className=' mt-2 uppercase mr-2 px-3 py-1 font-semibold font-logoFont hover:bg-[#FFF2CC]  hover:text-[#101828]  bg-[#FFC000] text-[#101828] rounded-lg hover:ring-1  ml-1  duration-300'>
+              sign out
+            </button>
           </div>
         </div>
         {/* <!-- Slider controls --> */}

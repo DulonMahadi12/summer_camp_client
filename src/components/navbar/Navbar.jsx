@@ -6,7 +6,7 @@ const Navbar = () => {
 
   return (
     <>
-      <section className=' bg-[#FFFBEE] font-semibold body-font'>
+      <section className=' bg-[#FFF2CC] font-semibold body-font'>
         <div className='container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center'>
           <Link
             to={'/'}
@@ -19,23 +19,23 @@ const Navbar = () => {
           </Link>
           <nav className=' uppercase font-normal md:mr-auto md:ml-4 md:py-1 md:pl-4 flex flex-wrap items-center text-[#808080] justify-center'>
             <Link
-              to={'/'}
+              to={'/home'}
               className='mr-5 cursor-pointer hover:text-[#FFC000] hover:underline'
             >
-              features
+              Home
             </Link>
             <Link
-              to={'/'}
+              to={'/about'}
               className='mr-5 cursor-pointer hover:text-[#FFC000] hover:underline'
             >
               about
             </Link>
 
             <Link
-              to={'/'}
+              to={'/courses'}
               className='mr-5 cursor-pointer hover:text-[#FFC000] hover:underline'
             >
-              alumni
+              our-courses
             </Link>
             <Link
               to={'/'}
