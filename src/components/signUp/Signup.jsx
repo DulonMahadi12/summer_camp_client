@@ -1,4 +1,3 @@
-import { FaFacebook, FaGithub, FaGoogle } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 const Signup = () => {
@@ -26,10 +25,7 @@ const Signup = () => {
               {/* input  */}
               <div className='flex -mx-3'>
                 <div className='w-1/2 px-3 mb-5'>
-                  <label
-                    htmlFor='firstName'
-                    className='text-xs font-semibold px-1'
-                  >
+                  <label htmlFor='firstName' className='text-sm px-1'>
                     First name
                   </label>
                   <div className='flex'>
@@ -46,10 +42,7 @@ const Signup = () => {
                 </div>
                 {/* input  */}
                 <div className='w-1/2 px-3 mb-5'>
-                  <label
-                    htmlFor='lastName'
-                    className='text-xs font-semibold px-1'
-                  >
+                  <label htmlFor='lastName' className='text-sm px-1'>
                     Last name
                   </label>
                   <div className='flex'>
@@ -68,7 +61,7 @@ const Signup = () => {
               <div className='flex -mx-3'>
                 {/* input  */}
                 <div className='w-full px-3 mb-5'>
-                  <label htmlFor='email' className='text-xs font-semibold px-1'>
+                  <label htmlFor='email' className='text-sm px-1'>
                     Email
                   </label>
                   <div className='flex'>
@@ -87,10 +80,7 @@ const Signup = () => {
               {/* input  */}
               <div className='flex -mx-3'>
                 <div className='w-full px-3 mb-5'>
-                  <label
-                    htmlFor='password'
-                    className='text-xs font-semibold px-1'
-                  >
+                  <label htmlFor='password' className='text-sm px-1'>
                     Password
                   </label>
                   <div className='flex'>
@@ -109,10 +99,7 @@ const Signup = () => {
               {/* input  */}
               <div className='flex -mx-3'>
                 <div className='w-full px-3 mb-5'>
-                  <label
-                    htmlFor='confirmPassword'
-                    className='text-xs font-semibold px-1'
-                  >
+                  <label htmlFor='confirmPassword' className='text-sm px-1'>
                     Confirm Password
                   </label>
                   <div className='flex'>
@@ -131,7 +118,7 @@ const Signup = () => {
               {/* button  */}
               <div className=''>
                 <div className=''>
-                  <button className='uppercase w-full mx-auto bg-[#FFC000] duration-500 hover:bg-slate-500 text-white rounded-lg px-6 py-2 font-semibold'>
+                  <button className='uppercase w-full mx-auto bg-[#FFC000] duration-500 hover:bg-[#12B76A] text-white rounded-lg px-6 py-2 font-semibold'>
                     sign up
                   </button>
                 </div>

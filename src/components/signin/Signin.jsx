@@ -46,7 +46,7 @@ const Signin = () => {
               {/* input  */}
               <div className='flex -mx-3'>
                 <div className='w-full px-3 mb-5'>
-                  <label htmlFor='email' className='text-xs font-semibold px-1'>
+                  <label htmlFor='email' className='text-sm px-1'>
                     Email
                   </label>
                   <div className='flex'>
@@ -65,10 +65,7 @@ const Signin = () => {
               {/* input  */}
               <div className='flex -mx-3'>
                 <div className='w-full px-3 mb-5'>
-                  <label
-                    htmlFor='password'
-                    className='text-xs font-semibold px-1'
-                  >
+                  <label htmlFor='password' className='text-sm px-1'>
                     Password
                   </label>
                   <div className='flex'>
@@ -87,13 +84,13 @@ const Signin = () => {
               {/* button  */}
               <div className=''>
                 <div className=''>
-                  <button className='uppercase w-full mx-auto bg-[#FFC000] duration-500 hover:bg-slate-500 text-white rounded-lg px-6 py-2 font-semibold'>
+                  <button className='uppercase w-full mx-auto bg-[#FFC000] duration-500 hover:bg-[#12B76A] text-white rounded-lg px-6 py-2 font-semibold'>
                     sign in
                   </button>
                 </div>
               </div>
               <p className='mb-0 capitalize mt-2 pt-1 text-sm font-semibold'>
-                Don't have an account?
+                Don{"'"}t have an account?
                 <Link
                   to={'/signup'}
                   className='text-[#F04438] ms-1 underline transition duration-150 ease-in-out hover:text-danger-600 focus:text-danger-600 active:text-danger-700 capitalize'

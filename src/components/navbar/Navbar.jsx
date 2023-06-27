@@ -50,10 +50,10 @@ const Navbar = () => {
               blog
             </Link>
             <Link
-              to={'/contact'}
+              to={'/contactus'}
               className='mr-5 cursor-pointer hover:text-[#FFC000] hover:underline'
             >
-              contact
+              contact-us
             </Link>
           </nav>
           <section className='mr-5 '>
