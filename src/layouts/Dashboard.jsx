@@ -1,0 +1,110 @@
+import { FaFilter, FaGripVertical, FaHome, FaUsers } from 'react-icons/fa';
+import { Link, Outlet } from 'react-router-dom';
+
+const Dashboard = () => {
+  //TODO: when user role is here change this its just by default
+  const user = { role: 'instructor' }; // admin, instructor, basic
+
+  return (
+    <div>
+      <div className='drawer lg:drawer-open'>
+        <input id='my-drawer-2' type='checkbox' className='drawer-toggle' />
+        <div className='drawer-content flex flex-col items-center justify-center'>
+          <div className='w-screen min-h-screen overflow-y-auto p-20 lg:p-10 bg-green-50'>
+            {/* main content here  */}
+            <Outlet></Outlet>
+          </div>
+          <label
+            htmlFor='my-drawer-2'
+            className='btn btn-primary drawer-button fixed top-2 left-2 lg:hidden'
+          >
+            <FaGripVertical></FaGripVertical>
+          </label>
+        </div>
+        <div className='drawer-side min-h-screen overflow-y-auto'>
+          <label htmlFor='my-drawer-2' className='drawer-overlay'></label>
+          <ul className='bg-[#FFF2CC] menu p-4 min-h-screen overflow-y-auto w-64 py-10 text-base-content'>
+            {/* Sidebar content here */}
+            <li>
+              <Link
+                to={'/home'}
+                className='flex items-center px-3 py-2 text-gray-600 transition-colors duration-300 transform rounded-lg dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700 mb-1'
+              >
+                <span className='text-xl'>
+                  <FaHome></FaHome>
+                </span>
+
+                <span className='text-sm uppercase font-semibold'>home</span>
+              </Link>
+            </li>
+
+            {user?.role === 'admin' ? (
+              <>
+                {' '}
+                <li>
+                  <Link
+                    to={'/dashboard/manageclasses'}
+                    className='flex items-center px-3 py-2 text-gray-600 transition-colors duration-300 transform rounded-lg dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700 mb-1'
+                  >
+                    <span className='text-xl'>
+                      <FaFilter></FaFilter>
+                    </span>
+
+                    <span className='text-sm uppercase font-semibold'>
+                      manage-courses
+                    </span>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to={'/dashboard/manageusers'}
+                    className='flex items-center px-3 py-2 text-gray-600 transition-colors duration-300 transform rounded-lg dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700 mb-1 uppercase'
+                  >
+                    <span className='text-xl'>
+                      <FaUsers></FaUsers>
+                    </span>
+
+                    <span className='text-sm font-medium'>Manage Users</span>
+                  </Link>
+                </li>
+              </>
+            ) : user?.role === 'instructor' ? (
+              <>
+                <li>
+                  <Link
+                    to={'/dashboard/addcourse'}
+                    className='flex items-center px-3 py-2 text-gray-600 transition-colors duration-300 transform rounded-lg dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700 mb-1 uppercase'
+                  >
+                    <span className='text-xl'>
+                      <FaUsers></FaUsers>
+                    </span>
+
+                    <span className='text-sm font-medium'>add course</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to={'/dashboard/mycourse'}
+                    className='flex items-center px-3 py-2 text-gray-600 transition-colors duration-300 transform rounded-lg dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700 mb-1 uppercase'
+                  >
+                    <span className='text-xl'>
+                      <FaUsers></FaUsers>
+                    </span>
+
+                    <span className='text-sm font-medium'>my course</span>
+                  </Link>
+                </li>
+              </>
+            ) : (
+              <>
+                <p>basic user</p>
+              </>
+            )}
+          </ul>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Dashboard;

@@ -55,6 +55,12 @@ const Navbar = () => {
             >
               contact-us
             </Link>
+            <Link
+              to={'/dashboard'}
+              className='mr-5 cursor-pointer hover:text-[#FFC000] hover:underline'
+            >
+              dashboard
+            </Link>
           </nav>
           <section className='mr-5 '>
             <div className='flex mt-5 lg:mt-0'>

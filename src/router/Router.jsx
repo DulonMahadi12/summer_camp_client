@@ -12,6 +12,11 @@ import Contact from '../components/contact/Contact';
 import Signin from '../components/signin/Signin';
 import Demo from '../components/demo/Demo';
 import Signup from '../components/signUp/Signup';
+import Dashboard from '../layouts/Dashboard';
+import ManageClasses from '../components/dashboard/manageClasses/ManageClasses';
+import ManageUsers from '../components/dashboard/manageUsers/ManageUsers';
+import AddCourse from '../components/dashboard/addCourse/AddCourse';
+import MyCourses from '../components/dashboard/myCourse/MyCourses';
 
 const router = createBrowserRouter([
   {
@@ -61,6 +66,28 @@ const router = createBrowserRouter([
       {
         path: '/signup',
         element: <Signup></Signup>,
+      },
+    ],
+  },
+  {
+    path: '/dashboard',
+    element: <Dashboard></Dashboard>,
+    children: [
+      {
+        path: '/dashboard/manageclasses',
+        element: <ManageClasses></ManageClasses>,
+      },
+      {
+        path: '/dashboard/manageusers',
+        element: <ManageUsers></ManageUsers>,
+      },
+      {
+        path: '/dashboard/addcourse',
+        element: <AddCourse></AddCourse>,
+      },
+      {
+        path: '/dashboard/mycourse',
+        element: <MyCourses></MyCourses>,
       },
     ],
   },
