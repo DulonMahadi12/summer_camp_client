@@ -9,6 +9,9 @@ import CourseDetails from '../components/courses/courseDetails/CourseDetails';
 import Instructors from '../components/instructors/Instructors';
 import InstructorsDetails from '../components/instructorsDetails/InstructorsDetails';
 import Contact from '../components/contact/Contact';
+import Signin from '../components/signin/Signin';
+import Demo from '../components/demo/Demo';
+import Signup from '../components/signUp/Signup';
 
 const router = createBrowserRouter([
   {
@@ -51,7 +54,19 @@ const router = createBrowserRouter([
         path: '/contact',
         element: <Contact></Contact>,
       },
+      {
+        path: '/signin',
+        element: <Signin></Signin>,
+      },
+      {
+        path: '/signup',
+        element: <Signup></Signup>,
+      },
     ],
+  },
+  {
+    path: '/demo',
+    element: <Demo></Demo>,
   },
   {
     path: '*',

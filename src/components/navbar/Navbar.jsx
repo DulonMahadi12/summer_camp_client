@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   //TODO: when user is available change this
-  const user = true;
+  const user = false;
 
   return (
     <>
@@ -88,9 +88,11 @@ const Navbar = () => {
               ) : (
                 <>
                   <small>
-                    <button className='uppercase mr-2 px-10 py-2 font-lg hover:bg-[#12B76A]  hover:text-[white] duration-300 bg-[#FFC000] text-[#101828] rounded-lg hover:ring-1 '>
-                      sign in
-                    </button>
+                    <Link to={'/signin'}>
+                      <button className='uppercase mr-2 px-10 py-2 font-lg hover:bg-[#12B76A]  hover:text-[white] duration-300 bg-[#FFC000] text-[#101828] rounded-lg hover:ring-1 '>
+                        sign in
+                      </button>
+                    </Link>
                   </small>
                 </>
               )}

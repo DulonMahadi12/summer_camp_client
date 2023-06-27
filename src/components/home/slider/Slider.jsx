@@ -11,7 +11,7 @@ const Slider = () => {
         <div className='relative h-56 overflow-hidden md:h-96'>
           {/* <!-- Item 1 --> */}
           <div
-            className='hidden h-96 duration-700 ease-in-out bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500'
+            className=' h-96 duration-700 ease-in-out bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500'
             data-carousel-item
           >
             <img
@@ -33,7 +33,7 @@ const Slider = () => {
 
           {/* <!-- Item 1 --> */}
           <div
-            className='hidden h-96 duration-700 ease-in-out bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500'
+            className=' h-96 duration-700 ease-in-out bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500'
             data-carousel-item
           >
             <img
@@ -54,7 +54,7 @@ const Slider = () => {
 
           {/* <!-- Item 3 --> */}
           <div
-            className='hidden h-96 duration-700 ease-in-out bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500'
+            className=' h-96 duration-700 ease-in-out bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500'
             data-carousel-item
           >
             <img

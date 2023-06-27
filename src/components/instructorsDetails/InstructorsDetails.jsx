@@ -71,9 +71,9 @@ const InstructorsDetails = () => {
                 </small>
 
                 <small className='font-normal text-md'>
-                  <Link to={'/courses'}>
-                    <button className='ms-2 rounded-lg w-32 h-6 duration-200 font-bold text-xs py-1 px-5 text-[#2b2b2b] capitalize bg-[#FFC000] hover:bg-[#12B76A] hover:text-white'>
-                      back to course
+                  <Link to={'/instructors'}>
+                    <button className='ms-2 rounded-lg w-40 h-6 duration-200 font-bold text-xs py-1 px-5 text-[#2b2b2b] capitalize bg-[#FFC000] hover:bg-[#12B76A] hover:text-white'>
+                      back to instructors
                     </button>
                   </Link>
                 </small>
