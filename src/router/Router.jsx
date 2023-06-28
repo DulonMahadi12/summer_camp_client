@@ -17,6 +17,9 @@ import ManageClasses from '../components/dashboard/manageClasses/ManageClasses';
 import ManageUsers from '../components/dashboard/manageUsers/ManageUsers';
 import AddCourse from '../components/dashboard/addCourse/AddCourse';
 import MyCourses from '../components/dashboard/myCourse/MyCourses';
+import MyCart from '../components/dashboard/myCart/MyCart';
+import PaymentHistory from '../components/dashboard/paymentHistory/PaymentHistory';
+import CheckOut from '../components/dashboard/checkOut/CheckOut';
 
 const router = createBrowserRouter([
   {
@@ -88,6 +91,18 @@ const router = createBrowserRouter([
       {
         path: '/dashboard/mycourse',
         element: <MyCourses></MyCourses>,
+      },
+      {
+        path: '/dashboard/mycart',
+        element: <MyCart></MyCart>,
+      },
+      {
+        path: '/dashboard/paymenthistory',
+        element: <PaymentHistory></PaymentHistory>,
+      },
+      {
+        path: '/dashboard/checkout',
+        element: <CheckOut></CheckOut>,
       },
     ],
   },

@@ -5,7 +5,7 @@ const SingleInstructor = () => {
       <div className='p-4 md:w-3/3'>
         <div className='h-full border-2 border-gray-200 border-opacity-60 rounded-t-full overflow-hidden'>
           <img
-            className='lg:h-48 md:h-36 w-full rounded-t-full object-cover object-center'
+            className='lg:h-48 md:h-36 w-full rounded-full object-cover object-center'
             src='https://dummyimage.com/720x400'
             alt='blog'
           />

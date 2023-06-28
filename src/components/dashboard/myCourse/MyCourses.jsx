@@ -2,8 +2,8 @@ import { Link } from 'react-router-dom';
 // show all the classes that you are added row classes dynamicly and filter out from user class
 const MyCourses = () => {
   return (
-    <div className='h-full'>
-      <div className='w-9/12 bg-white shadow-lg rounded-sm border border-gray-200'>
+    <div className='h-full w-full'>
+      <div className='w-full bg-white shadow-lg rounded-sm border border-gray-200'>
         <header className='px-5 py-4 border-b border-gray-100'>
           <h2 className='font-bold text-xl text-gray-800 capitalize'>
             courses

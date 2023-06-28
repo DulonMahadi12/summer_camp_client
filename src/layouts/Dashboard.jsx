@@ -1,16 +1,23 @@
-import { FaFilter, FaGripVertical, FaHome, FaUsers } from 'react-icons/fa';
+import {
+  FaClipboardList,
+  FaFilter,
+  FaGripVertical,
+  FaHome,
+  FaShoppingBag,
+  FaUsers,
+} from 'react-icons/fa';
 import { Link, Outlet } from 'react-router-dom';
 
 const Dashboard = () => {
   //TODO: when user role is here change this its just by default
-  const user = { role: 'instructor' }; // admin, instructor, basic
+  const user = { role: 'admin' }; // admin, instructor, basic
 
   return (
     <div>
       <div className='drawer lg:drawer-open'>
         <input id='my-drawer-2' type='checkbox' className='drawer-toggle' />
         <div className='drawer-content flex flex-col items-center justify-center'>
-          <div className='w-screen min-h-screen overflow-y-auto p-20 lg:p-10 bg-green-50'>
+          <div className='w-[100%] min-h-screen overflow-y-auto bg-[#FFFBEE] p-20 flex justify-center items-center lg:p-10'>
             {/* main content here  */}
             <Outlet></Outlet>
           </div>
@@ -97,7 +104,30 @@ const Dashboard = () => {
               </>
             ) : (
               <>
-                <p>basic user</p>
+                <li>
+                  <Link
+                    to={'/dashboard/mycart'}
+                    className='flex items-center px-3 py-2 text-gray-600 transition-colors duration-300 transform rounded-lg dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700 mb-1 uppercase'
+                  >
+                    <span className='text-xl'>
+                      <FaShoppingBag></FaShoppingBag>
+                    </span>
+
+                    <span className='text-sm font-medium'>my cart</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to={'/dashboard/paymenthistory'}
+                    className='flex items-center px-3 py-2 text-gray-600 transition-colors duration-300 transform rounded-lg dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700 mb-1 uppercase'
+                  >
+                    <span className='text-xl'>
+                      <FaClipboardList></FaClipboardList>
+                    </span>
+
+                    <span className='text-sm font-medium'>Payment history</span>
+                  </Link>
+                </li>
               </>
             )}
           </ul>

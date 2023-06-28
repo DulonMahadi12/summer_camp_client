@@ -24,24 +24,24 @@ const Signin = () => {
             </div>
             <div className='w-full mb-10 flex flex-row gap-3 items-center justify-center'>
               <button>
-                <p className='bg-[#FFC000] border border-slate-800 w-10 h-10 hover:bg-slate-700 hover:text-white flex items-center justify-center text-black rounded-full'>
+                <p className='bg-[#FFC000] w-10 h-10 hover:bg-slate-700 hover:text-white flex items-center justify-center text-slate-700 rounded-full'>
                   <FaGoogle></FaGoogle>
                 </p>
               </button>
 
               <button>
-                <p className='bg-[#FFC000] border border-slate-800 w-10 h-10 hover:bg-slate-700 hover:text-white flex items-center justify-center text-black rounded-full'>
+                <p className='bg-[#FFC000] w-10 h-10 hover:bg-slate-700 hover:text-white flex items-center justify-center text-slate-700 rounded-full'>
                   <FaGithub></FaGithub>
                 </p>
               </button>
 
               <button>
-                <p className='bg-[#FFC000] border border-slate-800 w-10 h-10 hover:bg-slate-700 hover:text-white flex items-center justify-center text-black rounded-full'>
+                <p className='bg-[#FFC000] w-10 h-10 hover:bg-slate-700 hover:text-white flex items-center justify-center text-slate-700 rounded-full'>
                   <FaFacebook></FaFacebook>
                 </p>
               </button>
             </div>
-            <hr className='px-10 mb-5' />
+            <div className='divider'>OR</div>
             <div>
               {/* input  */}
               <div className='flex -mx-3'>

@@ -1,4 +1,6 @@
 import { Link } from 'react-router-dom';
+import { FaPaperclip } from 'react-icons/fa6';
+import { IoPhonePortraitOutline } from 'react-icons/io5';
 
 const Signup = () => {
   return (
@@ -22,7 +24,7 @@ const Signup = () => {
               <p className='capitalize'>sign up, enjoy your challenge.</p>
             </div>
             <div>
-              {/* input  */}
+              {/* input user name first name and last name */}
               <div className='flex -mx-3'>
                 <div className='w-1/2 px-3 mb-5'>
                   <label htmlFor='firstName' className='text-sm px-1'>
@@ -58,8 +60,46 @@ const Signup = () => {
                   </div>
                 </div>
               </div>
+              {/* input user photo url and contact  */}
               <div className='flex -mx-3'>
+                <div className='w-1/2 px-3 mb-5'>
+                  <label htmlFor='photoURL' className='text-sm px-1'>
+                    photoURL
+                  </label>
+                  <div className='flex'>
+                    <div className='w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center'>
+                      <p>
+                        <FaPaperclip></FaPaperclip>
+                      </p>
+                    </div>
+                    <input
+                      id='photoURL'
+                      type='text'
+                      className='w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-yellow-200 outline-none focus:border-yellow-200'
+                      placeholder='image url'
+                    />
+                  </div>
+                </div>
                 {/* input  */}
+                <div className='w-1/2 px-3 mb-5'>
+                  <label htmlFor='contact' className='text-sm px-1'>
+                    contact (phone)
+                  </label>
+                  <div className='flex'>
+                    <div className='w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center'>
+                      <IoPhonePortraitOutline></IoPhonePortraitOutline>
+                    </div>
+                    <input
+                      id='contact'
+                      type='text'
+                      className='w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-yellow-200 outline-none focus:border-yellow-200'
+                      placeholder='+008-12256'
+                    />
+                  </div>
+                </div>
+              </div>
+              {/* input user email  */}
+              <div className='flex -mx-3'>
                 <div className='w-full px-3 mb-5'>
                   <label htmlFor='email' className='text-sm px-1'>
                     Email
@@ -77,7 +117,8 @@ const Signup = () => {
                   </div>
                 </div>
               </div>
-              {/* input  */}
+
+              {/* input user password  */}
               <div className='flex -mx-3'>
                 <div className='w-full px-3 mb-5'>
                   <label htmlFor='password' className='text-sm px-1'>
@@ -96,7 +137,7 @@ const Signup = () => {
                   </div>
                 </div>
               </div>
-              {/* input  */}
+              {/* input user confirm password */}
               <div className='flex -mx-3'>
                 <div className='w-full px-3 mb-5'>
                   <label htmlFor='confirmPassword' className='text-sm px-1'>
