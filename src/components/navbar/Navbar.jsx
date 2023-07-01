@@ -1,8 +1,9 @@
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { MyContext } from '../../context/ContextPassData';
 
 const Navbar = () => {
-  //TODO: when user is available change this
-  const user = false;
+  const { user } = useContext(MyContext);
 
   return (
     <>
@@ -75,7 +76,7 @@ const Navbar = () => {
                       alt='userName'
                     />
                   </div>
-                  <div className=' flex flex-col items-start'>
+                  <div className=' flex flex-col items-start self-end'>
                     <div className='flex items-center'>
                       <p className='font-bold text-md text-[#101828]'>
                         Alex Shatov
