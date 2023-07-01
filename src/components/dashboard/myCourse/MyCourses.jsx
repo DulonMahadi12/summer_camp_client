@@ -90,7 +90,7 @@ const MyCourses = () => {
                   <td className='p-2 whitespace-nowrap'>
                     <div className='text-left text-sm'>
                       <span className='text-[tomato] font-semibold'>
-                        total:
+                        Total:
                       </span>{' '}
                       150
                     </div>

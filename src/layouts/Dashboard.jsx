@@ -10,7 +10,7 @@ import { Link, Outlet } from 'react-router-dom';
 
 const Dashboard = () => {
   //TODO: when user role is here change this its just by default
-  const user = { role: 'admin' }; // admin, instructor, basic
+  const user = { role: 'instructor' }; // admin, instructor, basic
 
   return (
     <div>
