@@ -4,10 +4,16 @@ import { IoPhonePortraitOutline } from 'react-icons/io5';
 import { useForm } from 'react-hook-form';
 import { useContext } from 'react';
 import { MyContext } from '../../context/ContextPassData';
+import Swal from 'sweetalert2';
 
 const Signup = () => {
-  const { customError, setCustomError, setUser, signUpEmailPassword } =
-    useContext(MyContext);
+  const {
+    customError,
+    setCustomError,
+    setUser,
+    signUpEmailPassword,
+    profileUpdate,
+  } = useContext(MyContext);
 
   const {
     register,
@@ -20,29 +26,38 @@ const Signup = () => {
       setCustomError({ string: 'password not matched!' });
     } else {
       setCustomError(null);
-      const {
-        confirmPassword,
-        contact,
-        email,
-        firstName,
-        lastName,
-        password,
-        photoURL,
-      } = data;
+      const { contact, email, firstName, lastName, password, photoURL } = data;
+      const userName = `${firstName} ${lastName}`;
 
-      const newData = {
-        confirmPassword,
-        userName: `${firstName} ${lastName}`,
-        email,
-        password,
-        photoURL,
-        contact,
-      };
       //sign in firebase email and password:
       signUpEmailPassword(email, password)
-        .then((result) => setUser(result?.user))
+        .then(() => {
+          callBackHandle(userName, photoURL);
+          Swal.fire({
+            position: 'top-bottom',
+            icon: 'success',
+            title: 'Your work has been saved',
+            showConfirmButton: false,
+            timer: 1500,
+          });
+        })
         .catch((err) => setCustomError({ string: err?.message }));
     }
+  };
+
+  //callBackHandle:
+  const callBackHandle = (userName, imageUrl) => {
+    const profile = {
+      displayName: userName,
+      photoURL: imageUrl,
+    };
+    profileUpdate(profile)
+      .then((res) => {
+        setUser(res?.user);
+      })
+      .catch((err) => {
+        console.log(err?.message);
+      });
   };
 
   return (

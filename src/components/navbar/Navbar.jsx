@@ -6,7 +6,7 @@ import useFetchCartData from '../../hooks/useFetchCartData';
 const Navbar = () => {
   const { user, setUser, logOutUser } = useContext(MyContext);
 
-  // console.log(user);
+  console.log(user);
 
   const [, cart] = useFetchCartData();
   console.log(cart);

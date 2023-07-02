@@ -8,6 +8,7 @@ import {
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
+  updateProfile,
 } from 'firebase/auth';
 import app from '../firebaseSDK/firebaseSDK';
 import axios from 'axios';
@@ -46,6 +47,11 @@ const ContextPassData = ({ children }) => {
     return signOut(auth);
   };
 
+  //profile update when sign up:
+  const profileUpdate = (profile) => {
+    return updateProfile(auth?.currentUser, profile);
+  };
+
   //user  auth state change:
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
@@ -73,6 +79,7 @@ const ContextPassData = ({ children }) => {
     customError,
     setCustomError,
     signUpEmailPassword,
+    profileUpdate,
     loginUser,
     googleLogin,
     githubLogin,
