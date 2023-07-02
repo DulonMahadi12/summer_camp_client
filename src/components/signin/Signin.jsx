@@ -1,16 +1,47 @@
 import { FaFacebook, FaGithub, FaGoogle } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
+import { useContext } from 'react';
+import { MyContext } from '../../context/ContextPassData';
 
 const Signin = () => {
+  const {
+    loginUser,
+    googleLogin,
+    githubLogin,
+    setUser,
+    customError,
+    setCustomError,
+  } = useContext(MyContext);
+
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
 
+  //sign in with google:
+  const handleGoogleLogin = () => {
+    googleLogin()
+      .then((result) => setUser(result?.user))
+      .catch();
+  };
+  //sign in with github:
+  const handleGithubLogin = () => {
+    githubLogin()
+      .then((result) => {
+        setUser(result?.user);
+      })
+      .catch();
+  };
+
+  //form submit:
   const onSubmit = (data) => {
-    console.log(data);
+    const { email, password } = data;
+
+    loginUser(email, password)
+      .then((result) => setUser(result?.user))
+      .catch((err) => setCustomError({ string: err?.message }));
   };
 
   return (
@@ -34,13 +65,13 @@ const Signin = () => {
               <p className='capitalize'>sign in, for accept your identity</p>
             </div>
             <div className='w-full mb-10 flex flex-row gap-3 items-center justify-center'>
-              <button>
+              <button onClick={() => handleGoogleLogin()}>
                 <p className='bg-[#FFC000] w-10 h-10 hover:bg-slate-700 hover:text-white flex items-center justify-center text-slate-700 rounded-full'>
                   <FaGoogle></FaGoogle>
                 </p>
               </button>
 
-              <button>
+              <button onClick={() => handleGithubLogin()}>
                 <p className='bg-[#FFC000] w-10 h-10 hover:bg-slate-700 hover:text-white flex items-center justify-center text-slate-700 rounded-full'>
                   <FaGithub></FaGithub>
                 </p>
@@ -120,6 +151,9 @@ const Signin = () => {
                     sign in
                   </button>
                 </div>
+                <small className='ms-1 text-red-700'>
+                  {customError ? <span>{customError?.string}</span> : <></>}
+                </small>
               </div>
               <p className='mb-0 capitalize mt-2 pt-1 text-sm font-semibold'>
                 Don{"'"}t have an account?

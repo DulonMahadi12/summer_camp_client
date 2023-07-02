@@ -3,7 +3,16 @@ import { Link } from 'react-router-dom';
 import { MyContext } from '../../context/ContextPassData';
 
 const Navbar = () => {
-  const { user } = useContext(MyContext);
+  const { user, setUser, logOutUser } = useContext(MyContext);
+
+  // console.log(user);
+
+  //sign out:
+  const handleLogOut = () => {
+    logOutUser()
+      .then(() => setUser(null))
+      .catch();
+  };
 
   return (
     <>
@@ -72,24 +81,25 @@ const Navbar = () => {
                   <div className='w-14 h-14 rounded-full mr-2 border border-[#FFC000]'>
                     <img
                       className='rounded-full'
-                      src='https://raw.githubusercontent.com/cruip/vuejs-admin-dashboard-template/main/src/images/user-36-05.jpg'
-                      alt='userName'
+                      src={user?.photoURL}
+                      alt={user?.displayName}
                     />
                   </div>
                   <div className=' flex flex-col items-start self-end'>
                     <div className='flex items-center'>
                       <p className='font-bold text-md text-[#101828]'>
-                        Alex Shatov
+                        {user?.displayName}
                       </p>
                       <small className='text-sm font-light'>
-                        <button className='uppercase mr-2 px-3 font-lg hover:bg-[#F04438]  hover:text-[white]  bg-[#FFC000] text-[#101828] rounded-lg hover:ring-1  ml-1 font-normal duration-300'>
+                        <button
+                          onClick={() => handleLogOut()}
+                          className='uppercase mr-2 px-3 font-lg hover:bg-[#F04438]  hover:text-[white]  bg-[#FFC000] text-[#101828] rounded-lg hover:ring-1  ml-1 font-normal duration-300'
+                        >
                           sign out
                         </button>
                       </small>
                     </div>
-                    <small className='text-[#12B76A]'>
-                      dullonmolla88@gmail.com
-                    </small>
+                    <small className='text-[#12B76A]'>{user?.email}</small>
                   </div>
                 </>
               ) : (

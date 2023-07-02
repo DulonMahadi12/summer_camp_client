@@ -6,7 +6,8 @@ import { useContext } from 'react';
 import { MyContext } from '../../context/ContextPassData';
 
 const Signup = () => {
-  const { customError, setCustomError } = useContext(MyContext);
+  const { customError, setCustomError, setUser, signUpEmailPassword } =
+    useContext(MyContext);
 
   const {
     register,
@@ -16,7 +17,7 @@ const Signup = () => {
 
   const onSubmit = (data) => {
     if (data?.password !== data?.confirmPassword) {
-      setCustomError({ message: 'password not matched!' });
+      setCustomError({ string: 'password not matched!' });
     } else {
       setCustomError(null);
       const {
@@ -37,7 +38,10 @@ const Signup = () => {
         photoURL,
         contact,
       };
-      console.log(newData);
+      //sign in firebase email and password:
+      signUpEmailPassword(email, password)
+        .then((result) => setUser(result?.user))
+        .catch((err) => setCustomError({ string: err?.message }));
     }
   };
 
@@ -279,7 +283,6 @@ const Signup = () => {
                       errors.confirmPassword.type === 'pattern' && (
                         <span>re-type valid match password!</span>
                       )}
-                    {customError ? <span>password not matched!</span> : <></>}
                   </small>
                 </div>
               </div>
@@ -290,6 +293,9 @@ const Signup = () => {
                     sign up
                   </button>
                 </div>
+                <small className='ms-1 text-red-700'>
+                  {customError ? <span>{customError?.string}</span> : <></>}
+                </small>
               </div>
               <p className='mb-0 capitalize mt-2 pt-1 text-sm font-semibold'>
                 already have an account?

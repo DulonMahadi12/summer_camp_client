@@ -7,13 +7,13 @@ import { initializeApp } from 'firebase/app';
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: 'AIzaSyDyiPyGUsjOOdr2BCHmd1M3YQnFOnVrGYw',
-  authDomain: 'summer-fe021-camp.firebaseapp.com',
-  projectId: 'summer-fe021-camp',
-  storageBucket: 'summer-fe021-camp.appspot.com',
-  messagingSenderId: '620493697093',
-  appId: '1:620493697093:web:6e44b5e8fb55ed57f2332c',
-  measurementId: 'G-QGP7F1W5ZP',
+  apiKey: import.meta.env.VITE_APIKEY,
+  authDomain: import.meta.env.VITE_AUTHDOMAIN,
+  projectId: import.meta.env.VITE_PROJECTID,
+  storageBucket: import.meta.env.VITE_STORAGEBUCKET,
+  messagingSenderId: import.meta.env.VITE_MASSEGINGSENDERID,
+  appId: import.meta.env.VITE_APPID,
+  measurementId: import.meta.env.VITE_MEASUREMENTID,
 };
 
 // Initialize Firebase
