@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { useContext } from 'react';
 import { MyContext } from '../../context/ContextPassData';
+import Swal from 'sweetalert2';
 
 const Signin = () => {
   const {
@@ -20,10 +21,23 @@ const Signin = () => {
     formState: { errors },
   } = useForm();
 
+  const alertSWL = () => {
+    Swal.fire({
+      position: 'top-bottom',
+      icon: 'success',
+      title: 'Sign In success!',
+      showConfirmButton: false,
+      timer: 2000,
+    });
+  };
+
   //sign in with google:
   const handleGoogleLogin = () => {
     googleLogin()
-      .then((result) => setUser(result?.user))
+      .then((result) => {
+        setUser(result?.user);
+        alertSWL();
+      })
       .catch();
   };
   //sign in with github:
@@ -31,6 +45,7 @@ const Signin = () => {
     githubLogin()
       .then((result) => {
         setUser(result?.user);
+        alertSWL();
       })
       .catch();
   };
@@ -40,7 +55,10 @@ const Signin = () => {
     const { email, password } = data;
 
     loginUser(email, password)
-      .then((result) => setUser(result?.user))
+      .then((result) => {
+        setUser(result?.user);
+        alertSWL();
+      })
       .catch((err) => setCustomError({ string: err?.message }));
   };
 

@@ -1,7 +1,7 @@
 const Demo = () => {
   return (
     <div>
-      <p>demo check</p>
+      <p>ok</p>
     </div>
   );
 };

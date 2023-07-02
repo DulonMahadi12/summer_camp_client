@@ -10,6 +10,7 @@ import {
   signOut,
 } from 'firebase/auth';
 import app from '../firebaseSDK/firebaseSDK';
+import axios from 'axios';
 
 export const MyContext = createContext(null);
 
@@ -50,13 +51,21 @@ const ContextPassData = ({ children }) => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       if (currentUser) {
         setUser(currentUser);
+        axios
+          .post('http://localhost:3000/jwt', {
+            email: currentUser?.email,
+          })
+          .then((resData) => {
+            const token = resData?.data?.token;
+            localStorage.setItem('accessToken', token);
+          });
       } else {
         setUser(null);
       }
     });
 
     return unsubscribe();
-  }, [auth]);
+  }, [auth, user]);
 
   const contextData = {
     user,
