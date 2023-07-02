@@ -1,7 +1,18 @@
 import { FaFacebook, FaGithub, FaGoogle } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { useForm } from 'react-hook-form';
 
 const Signin = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = (data) => {
+    console.log(data);
+  };
+
   return (
     <div className='min-w-screen min-h-screen w-full py-10 bg-[#FFFBEE] flex justify-center items-center'>
       <div
@@ -42,7 +53,7 @@ const Signin = () => {
               </button>
             </div>
             <div className='divider'>OR</div>
-            <div>
+            <form onSubmit={handleSubmit(onSubmit)}>
               {/* input  */}
               <div className='flex -mx-3'>
                 <div className='w-full px-3 mb-5'>
@@ -56,10 +67,23 @@ const Signin = () => {
                     <input
                       id='email'
                       type='email'
+                      {...register('email', {
+                        required: true,
+                        pattern:
+                          /^(?:(?:[a-z])+(.|_)?(?!\.))*\w@(?:(?:[a-z])+(-|.)?(?!\.))*\w\.\w{2,}$/gim,
+                      })}
                       className='w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-yellow-200 outline-none focus:border-yellow-200'
                       placeholder='example@gmail.com'
                     />
                   </div>
+                  <small className='ms-1 text-red-700'>
+                    {errors.email && errors.email.type === 'required' && (
+                      <span>This is required!</span>
+                    )}
+                    {errors.email && errors.email.type === 'pattern' && (
+                      <span>type valid email!</span>
+                    )}
+                  </small>
                 </div>
               </div>
               {/* input  */}
@@ -75,10 +99,18 @@ const Signin = () => {
                     <input
                       id='password'
                       type='password'
+                      {...register('password', {
+                        required: true,
+                      })}
                       className='w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-yellow-200 outline-none focus:border-yellow-200'
                       placeholder='password'
                     />
                   </div>
+                  <small className='ms-1 text-red-700'>
+                    {errors.password && errors.password.type === 'required' && (
+                      <span>This is required!</span>
+                    )}
+                  </small>
                 </div>
               </div>
               {/* button  */}
@@ -98,7 +130,7 @@ const Signin = () => {
                   sign up
                 </Link>
               </p>
-            </div>
+            </form>
           </div>
         </div>
       </div>
