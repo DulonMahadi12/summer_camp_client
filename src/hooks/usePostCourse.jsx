@@ -4,10 +4,9 @@ import Swal from 'sweetalert2';
 const usePostCourse = () => {
   const [axiosSecure] = useAxiosIntercept();
   const postCourse = async (data, userEmail) => {
-    const res = await axiosSecure.post(
-      `http://localhost:3000/postcourse?email=${userEmail}`,
-      { ...data }
-    );
+    const res = await axiosSecure.post(`/rawcourse?email=${userEmail}`, {
+      ...data,
+    });
     if (res?.data?.acknowledged) {
       Swal.fire({
         position: 'top-bottom',

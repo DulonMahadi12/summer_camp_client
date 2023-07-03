@@ -39,9 +39,9 @@ const AddCourse = () => {
         courseSets,
         coursePrice,
         course_enrolled: 0,
-        Instructor_name: user?.displayName,
+        instructor_name: user?.displayName,
         instructor_image: user?.photoURL,
-        Instructor_email: user?.email,
+        instructor_email: user?.email,
         course_status: 'pending',
         admin_feedback: [],
       };
