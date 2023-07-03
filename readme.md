@@ -16,9 +16,9 @@
 
 ##### 8.role based authentication working properly .
 
-##### 9.private route seperately setup, admin, instructor, basic .
+##### 9.private route separately setup, admin, instructor, basic .
 
-##### 10. .
+##### 10.post a course data with user role instructor into database, mongodb.
 
 ##### 11. .
 

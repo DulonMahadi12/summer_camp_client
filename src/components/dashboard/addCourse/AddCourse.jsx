@@ -1,17 +1,56 @@
-import { Link } from 'react-router-dom';
 import {
   FaChair,
   FaClock,
-  FaImagePortrait,
   FaMoneyCheckDollar,
   FaOdnoklassniki,
   FaPaperclip,
   FaPen,
-  FaPhone,
   FaSquarePollHorizontal,
 } from 'react-icons/fa6';
+import usePostCourse from '../../../hooks/usePostCourse';
+import { useContext } from 'react';
+import { MyContext } from '../../../context/ContextPassData';
 
 const AddCourse = () => {
+  const { user } = useContext(MyContext);
+  const [postCourse] = usePostCourse();
+
+  const handlePostRequest = (event) => {
+    event.preventDefault();
+    const form = event.target;
+
+    const courseName = form.courseName.value;
+    const courseTitle = form.courseTitle.value;
+    const courseDescription = form.courseDescription.value;
+    const courseImage = form.courseImage.value;
+    const courseParticipate = form.courseParticipate.value;
+    const courseTiming = form.times.value;
+    const courseSets = form.courseSets.value;
+    const coursePrice = form.coursePrice.value;
+
+    if (user) {
+      const newData = {
+        courseName,
+        courseTitle,
+        courseDescription,
+        courseImage,
+        courseParticipate,
+        courseTiming,
+        courseSets,
+        coursePrice,
+        course_enrolled: 0,
+        Instructor_name: user?.displayName,
+        instructor_image: user?.photoURL,
+        Instructor_email: user?.email,
+        course_status: 'pending',
+        admin_feedback: [],
+      };
+
+      const userEmail = user?.email;
+      postCourse(newData, userEmail);
+    }
+  };
+
   return (
     <div className='w-full md:w-2/2 py-10 px-8 bg-[#FFFBEE] md:px-10'>
       <div className='text-center mb-5'>
@@ -19,7 +58,7 @@ const AddCourse = () => {
           provide your course!
         </h1>
       </div>
-      <div>
+      <form onSubmit={handlePostRequest}>
         {/* input user name first name and last name */}
         <div className='flex -mx-3'>
           <div className='w-1/2 px-3 mb-5'>
@@ -35,6 +74,8 @@ const AddCourse = () => {
               <input
                 id='courseName'
                 type='text'
+                name='courseName'
+                required
                 className='w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-yellow-200 outline-none focus:border-yellow-200'
                 placeholder='course name'
               />
@@ -54,6 +95,8 @@ const AddCourse = () => {
               <input
                 id='courseTitle'
                 type='text'
+                name='courseTitle'
+                required
                 className='w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-yellow-200 outline-none focus:border-yellow-200'
                 placeholder='course title'
               />
@@ -75,6 +118,8 @@ const AddCourse = () => {
               <input
                 id='courseImage'
                 type='text'
+                name='courseImage'
+                required
                 className='w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-yellow-200 outline-none focus:border-yellow-200'
                 placeholder='course image url'
               />
@@ -97,6 +142,8 @@ const AddCourse = () => {
               <input
                 id='courseDescription'
                 type='text'
+                name='courseDescription'
+                required
                 className='w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-yellow-200 outline-none focus:border-yellow-200'
                 placeholder='course description'
               />
@@ -120,7 +167,9 @@ const AddCourse = () => {
               </div>
               <input
                 id='courseParticipate'
-                type='text'
+                type='number'
+                name='courseParticipate'
+                required
                 className='w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-yellow-200 outline-none focus:border-yellow-200'
                 placeholder='course participate age'
               />
@@ -129,7 +178,7 @@ const AddCourse = () => {
           {/* input  */}
           <div className='w-1/2 px-3 mb-5'>
             <label htmlFor='courseTiming' className='text-sm px-1 capitalize'>
-              course Timing
+              course timing
             </label>
             <div className='flex'>
               <div className='w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center'>
@@ -139,9 +188,12 @@ const AddCourse = () => {
               </div>
               <input
                 id='courseTiming'
+                name='times'
                 type='number'
+                min='10'
+                max='18'
                 className='w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-yellow-200 outline-none focus:border-yellow-200'
-                placeholder='how many weeks'
+                placeholder='course timing'
               />
             </div>
           </div>
@@ -161,6 +213,8 @@ const AddCourse = () => {
               <input
                 id='courseSets'
                 type='number'
+                name='courseSets'
+                required
                 className='w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-yellow-200 outline-none focus:border-yellow-200'
                 placeholder='course participate sets'
               />
@@ -180,6 +234,8 @@ const AddCourse = () => {
               <input
                 id='courseTiming'
                 type='number'
+                name='coursePrice'
+                required
                 className='w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-yellow-200 outline-none focus:border-yellow-200'
                 placeholder='course price'
               />
@@ -195,7 +251,7 @@ const AddCourse = () => {
             </button>
           </div>
         </div>
-      </div>
+      </form>
     </div>
   );
 };
