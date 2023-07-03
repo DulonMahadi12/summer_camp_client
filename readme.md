@@ -11,3 +11,23 @@
 ##### 5. update user (username, photoURL).
 
 ##### 6. jwt post request to identify users.
+
+##### 7. user store in mongo db by field, {user_name,user_email,user_image,user_phone,user_role: ‘basic’ (send by default when user submitted)}.
+
+##### 8.role based authentication working properly .
+
+##### 9.private route seperately setup, admin, instructor, basic .
+
+##### 10. .
+
+##### 11. .
+
+##### 12. .
+
+##### 13. .
+
+##### 14. .
+
+##### 16. .
+
+##### 17. .

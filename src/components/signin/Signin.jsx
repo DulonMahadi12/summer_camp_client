@@ -1,11 +1,16 @@
 import { FaFacebook, FaGithub, FaGoogle } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { useContext } from 'react';
 import { MyContext } from '../../context/ContextPassData';
 import Swal from 'sweetalert2';
 
 const Signin = () => {
+  let navigate = useNavigate();
+  let location = useLocation();
+
+  let from = location?.state?.from?.pathname || '/';
+
   const {
     loginUser,
     googleLogin,
@@ -37,6 +42,7 @@ const Signin = () => {
       .then((result) => {
         setUser(result?.user);
         alertSWL();
+        navigate(from, { replace: true });
       })
       .catch();
   };
@@ -46,6 +52,7 @@ const Signin = () => {
       .then((result) => {
         setUser(result?.user);
         alertSWL();
+        navigate(from, { replace: true });
       })
       .catch();
   };
@@ -58,6 +65,7 @@ const Signin = () => {
       .then((result) => {
         setUser(result?.user);
         alertSWL();
+        navigate(from, { replace: true });
       })
       .catch((err) => setCustomError({ string: err?.message }));
   };

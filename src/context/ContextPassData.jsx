@@ -12,12 +12,14 @@ import {
 } from 'firebase/auth';
 import app from '../firebaseSDK/firebaseSDK';
 import axios from 'axios';
+import useUserPost from '../hooks/useUserPost';
 
 export const MyContext = createContext(null);
 
 const ContextPassData = ({ children }) => {
   const [user, setUser] = useState(null);
   const [customError, setCustomError] = useState(null);
+  const [postUserDB] = useUserPost();
 
   //firebase providers:
   const auth = getAuth(app);
@@ -57,6 +59,12 @@ const ContextPassData = ({ children }) => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       if (currentUser) {
         setUser(currentUser);
+        postUserDB({
+          name: currentUser?.displayName,
+          email: currentUser?.email,
+          img: currentUser?.photoURL,
+          user_role: 'basic',
+        });
         axios
           .post('http://localhost:3000/jwt', {
             email: currentUser?.email,
@@ -71,7 +79,7 @@ const ContextPassData = ({ children }) => {
     });
 
     return unsubscribe();
-  }, [auth, user]);
+  }, [auth, user, postUserDB]);
 
   const contextData = {
     user,

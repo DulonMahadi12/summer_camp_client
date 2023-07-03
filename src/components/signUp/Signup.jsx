@@ -26,7 +26,7 @@ const Signup = () => {
       setCustomError({ string: 'password not matched!' });
     } else {
       setCustomError(null);
-      const { contact, email, firstName, lastName, password, photoURL } = data;
+      const { email, firstName, lastName, password, photoURL } = data;
       const userName = `${firstName} ${lastName}`;
 
       //sign in firebase email and password:

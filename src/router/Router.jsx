@@ -20,6 +20,9 @@ import MyCourses from '../components/dashboard/myCourse/MyCourses';
 import MyCart from '../components/dashboard/myCart/MyCart';
 import PaymentHistory from '../components/dashboard/paymentHistory/PaymentHistory';
 import CheckOut from '../components/dashboard/checkOut/CheckOut';
+import Instructor from '../private/Instructor';
+import Admin from '../private/Admin';
+import Basic from '../private/Basic';
 
 const router = createBrowserRouter([
   {
@@ -78,31 +81,59 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/dashboard/manageclasses',
-        element: <ManageClasses></ManageClasses>,
+        element: (
+          <Admin>
+            <ManageClasses></ManageClasses>
+          </Admin>
+        ),
       },
       {
         path: '/dashboard/manageusers',
-        element: <ManageUsers></ManageUsers>,
+        element: (
+          <Admin>
+            <ManageUsers></ManageUsers>
+          </Admin>
+        ),
       },
       {
         path: '/dashboard/addcourse',
-        element: <AddCourse></AddCourse>,
+        element: (
+          <Instructor>
+            <AddCourse></AddCourse>
+          </Instructor>
+        ),
       },
       {
         path: '/dashboard/mycourse',
-        element: <MyCourses></MyCourses>,
+        element: (
+          <Instructor>
+            <MyCourses></MyCourses>
+          </Instructor>
+        ),
       },
       {
         path: '/dashboard/mycart',
-        element: <MyCart></MyCart>,
+        element: (
+          <Basic>
+            <MyCart></MyCart>
+          </Basic>
+        ),
       },
       {
         path: '/dashboard/paymenthistory',
-        element: <PaymentHistory></PaymentHistory>,
+        element: (
+          <Basic>
+            <PaymentHistory></PaymentHistory>
+          </Basic>
+        ),
       },
       {
         path: '/dashboard/checkout',
-        element: <CheckOut></CheckOut>,
+        element: (
+          <Basic>
+            <CheckOut></CheckOut>
+          </Basic>
+        ),
       },
     ],
   },

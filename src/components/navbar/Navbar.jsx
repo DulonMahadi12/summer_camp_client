@@ -1,15 +1,9 @@
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { MyContext } from '../../context/ContextPassData';
-import useFetchCartData from '../../hooks/useFetchCartData';
 
 const Navbar = () => {
   const { user, setUser, logOutUser } = useContext(MyContext);
-
-  console.log(user);
-
-  const [, cart] = useFetchCartData();
-  console.log(cart);
 
   //sign out:
   const handleLogOut = () => {
@@ -72,12 +66,14 @@ const Navbar = () => {
             >
               contact-us
             </Link>
-            <Link
-              to={'/dashboard'}
-              className='mr-5 cursor-pointer hover:text-[#FFC000] hover:underline'
-            >
-              dashboard
-            </Link>
+            {user && (
+              <Link
+                to={'/dashboard'}
+                className='mr-5 cursor-pointer hover:text-[#FFC000] hover:underline'
+              >
+                dashboard
+              </Link>
+            )}
           </nav>
           <section className='mr-5 '>
             <div className='flex mt-5 lg:mt-0'>
