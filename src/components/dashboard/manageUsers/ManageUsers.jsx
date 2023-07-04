@@ -75,19 +75,19 @@ const ManageUsers = () => {
                             {user?.user_role === 'admin' ? (
                               <>
                                 {' '}
-                                <span className='rounded-full w-32 h-6 py-0.5 duration-700 font-bold text-xs px-3 text-white capitalize bg-[#08854b]'>
+                                <span className='rounded-full w-32 h-6 py-0.5 duration-700 font-bold text-xs px-3 text-white capitalize bg-[#085732]'>
                                   admin
                                 </span>
                               </>
                             ) : user?.user_role === 'instructor' ? (
                               <>
-                                <span className='rounded-full w-32 h-6 duration-700 py-0.5 font-bold text-xs px-3 text-white capitalize bg-[#2a0cb3]'>
+                                <span className='rounded-full w-32 h-6 duration-700 py-0.5 font-bold text-xs px-3 text-white capitalize bg-[#250f85]'>
                                   instructor
                                 </span>
                               </>
                             ) : user?.user_role === 'basic' ? (
                               <>
-                                <span className='rounded-full w-32 h-6 duration-700 py-0.5 font-bold text-xs px-3 text-white capitalize bg-[#5B6061]'>
+                                <span className='rounded-full w-32 h-6 duration-700 py-0.5 font-bold text-xs px-3 text-white capitalize bg-[#505152]'>
                                   basic
                                 </span>
                               </>

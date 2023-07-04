@@ -24,7 +24,7 @@
 
 ##### 12. admin, get all users before check admin is admin otherwise data get error .
 
-##### 13. .
+##### 13. admin manage all raw couses.
 
 ##### 14. .
 
