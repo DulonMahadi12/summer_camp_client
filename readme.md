@@ -22,7 +22,7 @@
 
 ##### 11. get these course that the instructor add by own and display it instructor dashboard myCourse.jsx.
 
-##### 12. .
+##### 12. admin, get all users before check admin is admin otherwise data get error .
 
 ##### 13. .
 

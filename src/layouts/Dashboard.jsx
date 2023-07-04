@@ -3,7 +3,9 @@ import {
   FaFilter,
   FaGripVertical,
   FaHome,
+  FaReadme,
   FaShoppingBag,
+  FaThList,
   FaUsers,
 } from 'react-icons/fa';
 import { Link, Outlet } from 'react-router-dom';
@@ -98,7 +100,7 @@ const Dashboard = () => {
                       className='flex items-center px-3 py-2 text-gray-600 transition-colors duration-300 transform rounded-lg dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700 mb-1 uppercase'
                     >
                       <span className='text-xl'>
-                        <FaUsers></FaUsers>
+                        <FaReadme></FaReadme>
                       </span>
 
                       <span className='text-sm font-medium'>add course</span>
@@ -110,7 +112,7 @@ const Dashboard = () => {
                       className='flex items-center px-3 py-2 text-gray-600 transition-colors duration-300 transform rounded-lg dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700 mb-1 uppercase'
                     >
                       <span className='text-xl'>
-                        <FaUsers></FaUsers>
+                        <FaThList></FaThList>
                       </span>
 
                       <span className='text-sm font-medium'>my course</span>
