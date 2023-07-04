@@ -79,7 +79,7 @@ const ContextPassData = ({ children }) => {
     });
 
     return unsubscribe();
-  }, [auth, user, postUserDB]);
+  }, [auth, postUserDB]);
 
   const contextData = {
     user,

@@ -81,9 +81,9 @@ const Navbar = () => {
               {/* TODO: conditionally change when user is available */}
               {user ? (
                 <>
-                  <div className='w-14 h-14 rounded-full mr-2 border border-[#FFC000]'>
+                  <div className='w-14 h-14 overflow-hidden rounded-full mr-2 border border-[#FFC000]'>
                     <img
-                      className='rounded-full'
+                      className='rounded-full w-14'
                       src={user?.photoURL}
                       alt={user?.displayName}
                     />

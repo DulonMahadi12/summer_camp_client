@@ -11,7 +11,7 @@ const useAxiosIntercept = () => {
     (config) => {
       const token = localStorage.getItem('accessToken');
       if (token) {
-        config.headers['authorization'] = `bearer ${token}`;
+        config.headers[`authorization`] = `bearer ${token}`;
       }
       return config;
     },
