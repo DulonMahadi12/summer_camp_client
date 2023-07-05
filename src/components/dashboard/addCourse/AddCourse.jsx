@@ -28,12 +28,10 @@ const AddCourse = () => {
     const courseTiming = form.times.value;
     const courseSets = form.courseSets.value;
     const coursePrice = form.coursePrice.value;
-    const courseCategory = form.courseCategory.value;
 
     if (user) {
       const newData = {
         courseName,
-        courseCategory,
         courseTitle,
         courseDescription,
         courseImage,
@@ -193,8 +191,8 @@ const AddCourse = () => {
                 id='courseTiming'
                 name='times'
                 type='number'
-                min='10'
-                max='18'
+                min='3'
+                max='8'
                 className='w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-yellow-200 outline-none focus:border-yellow-200'
                 placeholder='course timing'
               />
@@ -241,28 +239,6 @@ const AddCourse = () => {
                 required
                 className='w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-yellow-200 outline-none focus:border-yellow-200'
                 placeholder='course price'
-              />
-            </div>
-          </div>
-        </div>
-        <div className='flex -mx-3'>
-          <div className='w-1/2 px-3 mb-5'>
-            <label htmlFor='courseCategory' className='text-sm px-1 capitalize'>
-              course category
-            </label>
-            <div className='flex'>
-              <div className='w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center'>
-                <p className='text-slate-500'>
-                  <FaBarcode></FaBarcode>
-                </p>
-              </div>
-              <input
-                id='courseCategory'
-                type='text'
-                name='courseCategory'
-                required
-                className='w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-yellow-200 outline-none focus:border-yellow-200'
-                placeholder='course category'
               />
             </div>
           </div>

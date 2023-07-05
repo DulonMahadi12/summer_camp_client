@@ -6,7 +6,7 @@ import useAxiosIntercept from './useAxiosIntercept';
 const useGetRawData = () => {
   const { user } = useContext(MyContext);
   const [axiosSecure] = useAxiosIntercept();
-  const { isLoading, error, data } = useQuery({
+  const { refetch, isLoading, error, data } = useQuery({
     queryKey: ['adminRawData'],
     queryFn: async () => {
       const res = await axiosSecure.get(`/managecourse?email=${user?.email}`);
@@ -14,7 +14,7 @@ const useGetRawData = () => {
     },
   });
 
-  return [isLoading, error, data];
+  return [refetch, isLoading, error, data];
 };
 
 export default useGetRawData;

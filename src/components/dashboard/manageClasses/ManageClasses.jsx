@@ -1,11 +1,10 @@
-import { Link } from 'react-router-dom';
 import useGetRawData from '../../../hooks/useGetRawData';
 import Loading from '../../loader/Loading';
 import NotFound from '../../404/NotFound';
+import CourseRow from './CourseRow/CourseRow';
 
 const ManageClasses = () => {
-  const [isLoading, error, data] = useGetRawData();
-  console.log(data);
+  const [, isLoading, error, data] = useGetRawData();
 
   if (isLoading) {
     <Loading></Loading>;
@@ -49,85 +48,7 @@ const ManageClasses = () => {
                 </thead>
                 <tbody className='text-sm divide-y divide-gray-100'>
                   {data?.map((course, index) => (
-                    <>
-                      {' '}
-                      <tr key={index}>
-                        <td className='p-2 whitespace-nowrapz'>
-                          <div className='flex items-center'>
-                            <img
-                              className='rounded-full items-start flex-shrink-0 mr-3'
-                              src={course?.instructor_image}
-                              width='50'
-                              height='50'
-                              alt='instructor image'
-                            />
-                            <div>
-                              <h4 className='text-sm font-semibold text-gray-900'>
-                                {course?.instructor_name}
-                              </h4>
-                              <div className='text-[13px]'>
-                                {course?.instructor_email}
-                              </div>
-                            </div>
-                          </div>
-                        </td>
-
-                        <td className='p-2 whitespace-nowrap'>
-                          <div className='text-left text-sm'>
-                            {course?.courseName}
-                          </div>
-                        </td>
-                        <td className='p-2 whitespace-nowrap'>
-                          <div className='text-left text-sm'>
-                            {course?.courseSets}
-                          </div>
-                        </td>
-                        <td className='p-2 whitespace-nowrap'>
-                          <div className='text-left font-medium text-green-500'>
-                            ${course?.coursePrice}
-                          </div>
-                        </td>
-                        <td className='p-2 whitespace-nowrap'>
-                          <div className='text-left font-medium text-green-500'>
-                            {course?.course_status === 'pending' ? (
-                              <>
-                                <span className='rounded-full w-32 h-6 animate-pulse py-0.5 duration-700 font-bold text-xs px-3 text-[#2b2b2b] capitalize bg-[#FFC000]'>
-                                  pending...
-                                </span>
-                              </>
-                            ) : course?.course_status === 'approved' ? (
-                              <>
-                                <span className='rounded-full w-32 h-6 duration-700 py-0.5 font-bold text-xs px-3 text-[#2b2b2b] capitalize bg-[#12B76A]'>
-                                  approved
-                                </span>
-                              </>
-                            ) : course?.course_status === 'denied' ? (
-                              <>
-                                <span className='rounded-full w-32 h-6 duration-700 py-0.5 font-bold text-xs px-3 text-[#2b2b2b] capitalize bg-[#F04438]'>
-                                  denied
-                                </span>{' '}
-                              </>
-                            ) : (
-                              <></>
-                            )}
-                          </div>
-                        </td>
-                        <td className='p-2 whitespace-nowrap'>
-                          <div className='text-lg text-center text-yellow-500'>
-                            <Link to={''}>
-                              <button className=' rounded-lg h-6 duration-200 font-bold text-xs px-2 text-[#2b2b2b] capitalize bg-[#12B76A] hover:bg-[#0c884e] hover:text-white'>
-                                approve
-                              </button>
-                            </Link>
-                            <Link to={''}>
-                              <button className=' ms-2 rounded-lg h-6 duration-200 font-bold text-xs px-2 text-[#2b2b2b] capitalize bg-[#F04438] hover:bg-[#c7170b] hover:text-white'>
-                                deny
-                              </button>
-                            </Link>
-                          </div>
-                        </td>
-                      </tr>
-                    </>
+                    <CourseRow key={index} course={course}></CourseRow>
                   ))}
                 </tbody>
               </table>

@@ -5,6 +5,7 @@ import NotFound from '../../404/NotFound';
 // show all the classes that you are added row classes dynamicly and filter out from user class
 const MyCourses = () => {
   const [isLoading, error, data] = useGetInstructorCourse();
+  // console.log(data);
   if (isLoading) {
     <Loading></Loading>;
   } else if (error) {
@@ -55,13 +56,14 @@ const MyCourses = () => {
                       <tr key={index}>
                         <td className='p-2 whitespace-nowrapz'>
                           <div className='flex items-center'>
-                            <img
-                              className='rounded-full items-start flex-shrink-0 mr-3'
-                              src={course?.instructor_image}
-                              width='50'
-                              height='50'
-                              alt='instructor image'
-                            />
+                            <div className='w-12 h-12 overflow-hidden rounded-full mr-2 border border-[#FFC000]'>
+                              <img
+                                className='rounded-full w-14'
+                                src={course?.instructor_image}
+                                alt={course?.instructor_image}
+                              />
+                            </div>
+
                             <div>
                               <h4 className='text-sm font-semibold text-gray-900'>
                                 {course?.instructor_name}
@@ -109,10 +111,10 @@ const MyCourses = () => {
                         </td>
                         <td className='p-2 whitespace-nowrap'>
                           <div className='text-left text-sm'>
-                            <span className='text-[tomato] font-semibold'>
-                              Total:
-                            </span>{' '}
-                            150
+                            <span className='text-[#6d34f0] font-semibold'>
+                              Total:{' '}
+                            </span>
+                            {course?.course_enrolled}
                           </div>
                         </td>
                         <td className='p-2 whitespace-nowrap'>

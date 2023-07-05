@@ -26,7 +26,7 @@
 
 ##### 13. admin manage all raw couses.
 
-##### 14. .
+##### 14. course mangement by admin .
 
 ##### 16. .
 

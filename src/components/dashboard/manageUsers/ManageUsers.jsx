@@ -48,13 +48,13 @@ const ManageUsers = () => {
                       <tr key={index}>
                         <td className='p-2 whitespace-nowrap'>
                           <div className='flex items-center'>
-                            <img
-                              className='rounded-full items-start flex-shrink-0 mr-3'
-                              src={user?.img}
-                              width='50'
-                              height='50'
-                              alt='instructor image'
-                            />
+                            <div className='w-12 h-12 overflow-hidden rounded-full mr-2 border border-[#FFC000]'>
+                              <img
+                                className='rounded-full w-14'
+                                src={user?.img}
+                                alt={user?.img}
+                              />
+                            </div>
                             <div>
                               <h4 className='text-sm font-semibold text-gray-900'>
                                 {user?.name}
