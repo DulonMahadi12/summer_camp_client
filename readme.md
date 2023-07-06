@@ -4,18 +4,18 @@
 
 ## admin:
 
-userName : Mahadi Molla
-email : molla@gmail.com
+--- userName : Mahadi Molla
+--- email : molla@gmail.com
 
 ---
 
 ## instructor:
 
-userName : Ali Hossain
-email : ali@gmail.com
+userName : Ali Hossain ---
+email : ali@gmail.com ---
 
-userName : RK Rahat
-email : rahat@gmail.com
+userName : RK Rahat ---
+email : rahat@gmail.com ---
 
 userName : Raisul Islam
 email : raisul@gmail.com
@@ -36,11 +36,12 @@ email : israt@gmail.com
 # ====================== website hosting link ======================
 
 ===================================================
-summer camp server:
-https://summer-camp-server-ebon-rho.vercel.app
 
-summer camp client:
-https://summer-fe021-camp.web.app
+- summer camp server:
+  https://summer-camp-server-ebon-rho.vercel.app
+
+- summer camp client:
+  https://summer-fe021-camp.web.app
 
 ===================================================
 
