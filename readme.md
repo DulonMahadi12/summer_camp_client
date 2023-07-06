@@ -17,31 +17,37 @@ email : ali@gmail.com ---
 userName : RK Rahat ---
 email : rahat@gmail.com ---
 
-userName : Raisul Islam
-email : raisul@gmail.com
+userName : Raisul Islam ---
+email : raisul@gmail.com ---
 
 ---
 
 ## basic:
 
-userName : Rakib Mia
-email : rakib@gmail.com
+userName : Rakib Mia ---
+email : rakib@gmail.com ---
 
-userName : Byzid Khan
-email : byzid@gmail.com
+userName : Byzid Khan ---
+email : byzid@gmail.com ---
 
-userName : Israt Jahan
-email : israt@gmail.com
+userName : Israt Jahan ---
+email : israt@gmail.com ---
 
 # ====================== website hosting link ======================
 
 ===================================================
 
 - summer camp server:
-  https://summer-camp-server-ebon-rho.vercel.app
+
+---
+
+https://summer-camp-server-ebon-rho.vercel.app
 
 - summer camp client:
-  https://summer-fe021-camp.web.app
+
+---
+
+https://summer-fe021-camp.web.app
 
 ===================================================
 
