@@ -20,6 +20,7 @@ const ContextPassData = ({ children }) => {
   const [user, setUser] = useState(null);
   const [customError, setCustomError] = useState(null);
   const [postUserDB] = useUserPost();
+  const [courseData, setCourseData] = useState();
 
   //firebase providers:
   const auth = getAuth(app);
@@ -92,6 +93,8 @@ const ContextPassData = ({ children }) => {
     googleLogin,
     githubLogin,
     logOutUser,
+    courseData,
+    setCourseData,
   };
 
   return (

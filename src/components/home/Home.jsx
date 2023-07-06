@@ -6,8 +6,13 @@ import PublicSpeking from '../../assets/AboutSectionLogo/PublicSpeking.svg';
 import { Link } from 'react-router-dom';
 import SingleCourse from '../courses/singleCourse/SingleCourse';
 import SingleInstructor from '../instructors/singleInstructors/SingleInstructor';
+import useGetApprovedCourse from '../../hooks/useGetApprovedCourse';
 
 const Home = () => {
+  const [isLoading, error, data] = useGetApprovedCourse();
+  const sliceCourse = data?.slice(2, 5);
+  // console.log(sliceCourse);
+
   return (
     <div className='min-h-screen'>
       {/* slider or carosel  */}
@@ -357,12 +362,13 @@ const Home = () => {
       <section className='py-20 w-full'>
         <div className='w-8/12 mx-auto pb-10 flex flex-col items-center text-center'>
           <h1 className='uppercase text-[#101828] title-font pb-5 sm:text-3xl text-3xl font-medium font-logoFont'>
-            academic courses
+            courses
           </h1>
           <p className='leading-relaxed text-lg'>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse,
-            corrupti porro ducimus magni minima reiciendis officia ea
-            voluptatibus consectetur laudantium.
+            Get ready for an unforgettable summer sports camp experience at
+            Kida! Our summer sports camp offers a perfect blend of fun, fitness,
+            and friendship. Join us to explore a wide range of exciting sports
+            activities such as soccer, basketball, swimming, tennis, and more.
             <small className='font-normal text-md'>
               <Link to={'/courses'}>
                 <button className='ms-2 rounded-lg w-32 h-6 duration-200 font-bold text-xs py-1 px-5 text-[#2b2b2b] capitalize bg-[#FFC000] hover:bg-[#12B76A] hover:text-white'>
@@ -377,7 +383,7 @@ const Home = () => {
         {/* TODO: when data available replace this dynamically only show 3 cards beacause its home page */}
         <div className='grid sm:grid-cols-1 bg-orange-50 px-20 py-10 lg:grid-cols-3 items-center justify-center gap-5'>
           {/* card-1 show course minimum 3 cards */}
-          {[1, 2, 3].map((everyCard, index) => (
+          {sliceCourse?.map((everyCard, index) => (
             <SingleCourse key={index} data={everyCard}></SingleCourse>
           ))}
         </div>
@@ -388,12 +394,12 @@ const Home = () => {
       <section className='pb-20 w-full'>
         <div className='w-8/12 mx-auto pb-10 flex flex-col items-center text-center'>
           <h1 className='uppercase text-[#101828] title-font pb-5 sm:text-3xl text-3xl font-medium font-logoFont'>
-            academic instructors
+            our instructors
           </h1>
           <p className='leading-relaxed text-lg'>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse,
-            corrupti porro ducimus magni minima reiciendis officia ea
-            voluptatibus consectetur laudantium.
+            At Kida Summer Camp, we take pride in our team of exceptional
+            instructors who are passionate about sports and dedicated to
+            providing an enriching experience for every child.
             <small className='font-normal text-md'>
               <Link to={'/instructors'}>
                 <button className='ms-2 rounded-lg w-40 h-6 duration-200 font-bold text-xs py-1 px-5 text-[#2b2b2b] capitalize bg-[#FFC000] hover:bg-[#12B76A] hover:text-white'>
@@ -408,7 +414,7 @@ const Home = () => {
         {/* TODO: when data available replace this dynamically only show 3 cards beacause its home page */}
         <div className='grid sm:grid-cols-1 bg-orange-50 px-20 py-10 lg:grid-cols-3 items-center justify-center gap-5'>
           {/* card-1 show instructor course minimum 3 cards */}
-          {[1, 2, 3].map((everyCard, index) => (
+          {sliceCourse?.map((everyCard, index) => (
             <SingleInstructor key={index} data={everyCard}></SingleInstructor>
           ))}
         </div>

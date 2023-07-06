@@ -1,6 +1,10 @@
 import { Link } from 'react-router-dom';
+import useGetInstructorCourse from '../../hooks/useGetInstructorCourse';
 
 const Instructors = () => {
+  const [isLoading, error, data] = useGetInstructorCourse();
+  console.log(data);
+
   return (
     <div className='bg-[#FFFBEE]'>
       <section className='text-gray-600 body-font'>

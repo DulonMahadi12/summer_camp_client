@@ -26,8 +26,8 @@
 
 ##### 13. admin manage all raw couses.
 
-##### 14. course mangement by admin .
+##### 14. course management by admin .
 
-##### 16. .
+##### 16. get all the data these are approved by the admin and display to ui. .
 
 ##### 17. .
