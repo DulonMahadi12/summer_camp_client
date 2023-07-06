@@ -1,3 +1,49 @@
+# ====================== demo users ======================
+
+---
+
+## admin:
+
+userName : Mahadi Molla
+email : molla@gmail.com
+
+---
+
+## instructor:
+
+userName : Ali Hossain
+email : ali@gmail.com
+
+userName : RK Rahat
+email : rahat@gmail.com
+
+userName : Raisul Islam
+email : raisul@gmail.com
+
+---
+
+## basic:
+
+userName : Rakib Mia
+email : rakib@gmail.com
+
+userName : Byzid Khan
+email : byzid@gmail.com
+
+userName : Israt Jahan
+email : israt@gmail.com
+
+# ====================== website hosting link ======================
+
+===================================================
+summer camp server:
+https://summer-camp-server-ebon-rho.vercel.app
+
+summer camp client:
+https://summer-fe021-camp.web.app
+
+===================================================
+
 # -----------------------------WORKING PROCESS-----------------------------
 
 ##### 1. npm package install: TailwindCss, reactRouter, React-Flowbit, react-icon, daisy-ui, tanstack react-query, axios, react-hook-form. react-sweet-alert2,
