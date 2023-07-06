@@ -41,7 +41,7 @@ email : israt@gmail.com ---
 
 ---
 
-https://summer-camp-server-ebon-rho.vercel.app
+https://summer-camp-server-14hak.vercel.app/
 
 - summer camp client:
 
