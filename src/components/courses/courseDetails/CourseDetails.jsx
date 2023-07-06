@@ -1,10 +1,17 @@
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { MyContext } from '../../../context/ContextPassData';
+import useAddCart from '../../../hooks/useAddCart';
 
 const CourseDetails = () => {
   const { courseData } = useContext(MyContext);
   // console.log(courseData);
+
+  const [postCourse] = useAddCart();
+
+  const handleCartAdd = (data) => {
+    postCourse(data);
+  };
   return (
     <div className='w-full flex items-center justify-center min-h-screen'>
       {/* TODO: akhane dynamically card ta render hobe */}
@@ -78,7 +85,10 @@ const CourseDetails = () => {
             <div className='flex items-center flex-wrap pb-4 mb-4 border-b-2 border-gray-100 mt-auto w-full'>
               <div className='flex justify-center items-center'>
                 <small className='font-normal text-md'>
-                  <button className='ms-2 rounded-lg w-32 h-6 duration-200 font-bold text-xs py-1 px-5 text-[#2b2b2b] capitalize bg-[#FFC000] hover:bg-[#12B76A] hover:text-white'>
+                  <button
+                    onClick={() => handleCartAdd(courseData)}
+                    className='ms-2 rounded-lg w-32 h-6 duration-200 font-bold text-xs py-1 px-5 text-[#2b2b2b] capitalize bg-[#FFC000] hover:bg-[#12B76A] hover:text-white'
+                  >
                     add to cart
                   </button>
                 </small>

@@ -11,6 +11,17 @@ const CourseRow = ({ course }) => {
     <>
       <tr>
         <td className='p-2 whitespace-nowrapz'>
+          <div className='flex items-center'>
+            <img
+              className='rounded-lg items-start w-36 h-20 flex-shrink-0 mr-3'
+              src={course?.courseImage}
+              // width='200'
+              // height='30'
+              alt='instructor image'
+            />
+          </div>
+        </td>
+        <td className='p-2 whitespace-nowrapz'>
           <span className='flex items-center'>
             <div className='w-12 h-12 overflow-hidden rounded-full mr-2 border border-[#FFC000]'>
               <img

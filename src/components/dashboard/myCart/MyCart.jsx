@@ -1,7 +1,11 @@
 import { FaCreditCard } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import useFetchCartData from '../../../hooks/useFetchCartData';
 
 const MyCart = () => {
+  const [, cart] = useFetchCartData();
+  console.log(cart);
+
   return (
     <div className='h-full w-full'>
       <div className='w-[100%] bg-white shadow-lg rounded-sm border border-gray-200'>
@@ -43,38 +47,47 @@ const MyCart = () => {
                 </tr>
               </thead>
               <tbody className='text-sm divide-y divide-gray-100'>
-                <tr>
-                  <td className='p-2 whitespace-nowrapz'>
-                    <div className='flex items-center'>
-                      <img
-                        className='rounded-lg items-start w-36 h-20 flex-shrink-0 mr-3'
-                        src='https://res.cloudinary.com/dc6deairt/image/upload/v1638102932/user-32-01_pfck4u.jpg'
-                        // width='200'
-                        // height='30'
-                        alt='instructor image'
-                      />
-                    </div>
-                  </td>
+                {cart?.map((cartItem, index) => (
+                  <>
+                    <tr key={index}>
+                      <td className='p-2 whitespace-nowrapz'>
+                        <div className='flex items-center'>
+                          <img
+                            className='rounded-lg items-start w-36 h-20 flex-shrink-0 mr-3'
+                            src={cartItem?.courseImage}
+                            // width='200'
+                            // height='30'
+                            alt='instructor image'
+                          />
+                        </div>
+                      </td>
 
-                  <td className='p-2 whitespace-nowrap'>
-                    <div className='text-left text-sm'>course name</div>
-                  </td>
-                  <td className='p-2 whitespace-nowrap'>
-                    <div className='text-left text-sm'>10+ week</div>
-                  </td>
-                  <td className='p-2 whitespace-nowrap'>
-                    <div className='text-left font-medium text-green-500'>
-                      $202,2
-                    </div>
-                  </td>
-                  <td className='p-2 whitespace-nowrap'>
-                    <Link to={''}>
-                      <button className=' rounded-lg h-6 duration-200 font-bold text-xs px-5 text-[#2b2b2b] capitalize bg-[#F04438] hover:bg-[#c7170b] hover:text-white'>
-                        delete
-                      </button>
-                    </Link>
-                  </td>
-                </tr>
+                      <td className='p-2 whitespace-nowrap'>
+                        <div className='text-left text-sm font-bold'>
+                          {cartItem?.courseName}
+                        </div>
+                      </td>
+                      <td className='p-2 whitespace-nowrap'>
+                        <div className='text-left text-sm'>
+                          {' '}
+                          {cartItem?.courseTiming} weeks
+                        </div>
+                      </td>
+                      <td className='p-2 whitespace-nowrap'>
+                        <div className='text-left font-medium text-green-500'>
+                          ${cartItem?.coursePrice}
+                        </div>
+                      </td>
+                      <td className='p-2 whitespace-nowrap'>
+                        <Link to={''}>
+                          <button className=' rounded-lg h-6 duration-200 font-bold text-xs px-5 text-[#2b2b2b] capitalize bg-[#F04438] hover:bg-[#c7170b] hover:text-white'>
+                            delete
+                          </button>
+                        </Link>
+                      </td>
+                    </tr>
+                  </>
+                ))}
               </tbody>
             </table>
           </div>

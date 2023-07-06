@@ -3,6 +3,7 @@ import axios from 'axios';
 const useAxiosIntercept = () => {
   //
   const axiosSecure = axios.create({
+    // baseURL: 'https://summer-camp-server-14hak.vercel.app',
     baseURL: 'https://summer-camp-server-14hak.vercel.app',
   });
   //

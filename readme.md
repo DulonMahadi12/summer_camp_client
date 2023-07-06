@@ -37,13 +37,13 @@ email : israt@gmail.com ---
 
 ===================================================
 
-- summer camp server:
+- summer camp server.:
 
 ---
 
 https://summer-camp-server-14hak.vercel.app/
 
-- summer camp client:
+- summer camp client.:
 
 ---
 

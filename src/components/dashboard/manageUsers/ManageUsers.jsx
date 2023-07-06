@@ -5,7 +5,7 @@ import NotFound from '../../404/NotFound';
 
 const ManageUsers = () => {
   const [isLoading, error, data] = useGetAllUsers();
-  console.log(data);
+  // console.log(data);
 
   if (isLoading) {
     <Loading></Loading>;

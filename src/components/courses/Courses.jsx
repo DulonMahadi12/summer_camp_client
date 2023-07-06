@@ -8,7 +8,7 @@ const Courses = () => {
   const [fetchSingleCourse] = useGetSingleCourse();
 
   const handleSingleCourse = (id) => {
-    console.log(id);
+    // console.log(id);
     fetchSingleCourse(id);
   };
 

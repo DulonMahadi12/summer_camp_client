@@ -25,7 +25,7 @@ const MyCourses = () => {
                 <thead className='text-sm font-semibold uppercase text-gray-500 bg-[#FFF2CC]'>
                   <tr>
                     <th className='p-2 whitespace-nowrap'>
-                      <div className='font-semibold text-left'>Instructor</div>
+                      <div className='font-semibold text-left'></div>
                     </th>
                     <th className='p-2 whitespace-nowrap'>
                       <div className='font-semibold text-left'>course</div>
@@ -56,22 +56,13 @@ const MyCourses = () => {
                       <tr key={index}>
                         <td className='p-2 whitespace-nowrapz'>
                           <div className='flex items-center'>
-                            <div className='w-12 h-12 overflow-hidden rounded-full mr-2 border border-[#FFC000]'>
-                              <img
-                                className='rounded-full w-14'
-                                src={course?.instructor_image}
-                                alt={course?.instructor_image}
-                              />
-                            </div>
-
-                            <div>
-                              <h4 className='text-sm font-semibold text-gray-900'>
-                                {course?.instructor_name}
-                              </h4>
-                              <div className='text-[13px]'>
-                                {course?.instructor_email}
-                              </div>
-                            </div>
+                            <img
+                              className='rounded-lg items-start w-36 h-20 flex-shrink-0 mr-3'
+                              src={course?.courseImage}
+                              // width='200'
+                              // height='30'
+                              alt='instructor image'
+                            />
                           </div>
                         </td>
 

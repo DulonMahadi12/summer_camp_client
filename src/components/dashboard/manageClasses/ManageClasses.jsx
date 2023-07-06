@@ -25,6 +25,9 @@ const ManageClasses = () => {
                 <thead className='text-sm font-semibold uppercase text-gray-500 bg-[#FFF2CC]'>
                   <tr>
                     <th className='p-2 whitespace-nowrap'>
+                      <div className='font-semibold text-left'></div>
+                    </th>
+                    <th className='p-2 whitespace-nowrap'>
                       <div className='font-semibold text-left'>Instructor</div>
                     </th>
                     <th className='p-2 whitespace-nowrap'>
